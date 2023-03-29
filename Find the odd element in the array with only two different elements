@@ -2,24 +2,23 @@
  
 void printodd(int array[], int size)
 {
-    int xor2 = array[0]; /* Will hold XOR of two odd occurring elements */
+    int xor2 = array[0]; 
     int set;
     int i;
     int n = size - 2;
     int x = 0, y = 0;
  
-    /* The xor will basically be xor of two odd occurring elements */
     for (i = 1; i < size; i++)
         xor2 = xor2 ^ array[i]; 
-    /* Get one set rightmost bit in the xor2. */
+ 
     set = xor2 & ~(xor2 - 1);
-    /* Now divide elements in two sets: */
+    
     for (i = 0; i < size; i++)
     {
-        /* XOR of first set is finally going to hold one odd occurring number x */
+       
         if (array[i] & set)
         x = x ^ array[i];
-        /* XOR of second set is finally going to hold the other odd occurring number y */
+        
         else
         y = y ^ array[i];
     }
